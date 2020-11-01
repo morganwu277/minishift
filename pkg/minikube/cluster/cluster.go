@@ -525,6 +525,7 @@ func setProxyToShell(config MachineConfig, h *host.Host) error {
 			fmt.Println("FAIL")
 			return fmt.Errorf("Error getting VM IP: %s", err)
 		}
+		time.Sleep(2 * time.Second)
 		hostIP, err := minishiftNetwork.DetermineHostIP(h.Driver)
 		if err != nil {
 			fmt.Println("FAIL")
